@@ -62,62 +62,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      nodes: [
-        {
-          name: 'Pepperoni',
-          id: 'pepperoni-id',
-          childs: [
-            {
-              name: 'Spicy',
-              id: 'spicy-id',
-              childs: []
-            },
-            {
-              name: 'Regular',
-              id: 'regular-id',
-              childs: []
-            }
-          ]
-        },
-        {
-          name: 'Chicken',
-          id: 'chicken-id',
-          childs: [
-            {
-              name: 'Buffalo',
-              id: 'buffalo-id',
-              childs: [
-                {
-                  name: 'Mild',
-                  id: 'mild-id',
-                  childs: []
-                },
-                {
-                  name: 'Hot',
-                  id: 'hot-id',
-                  childs: [
-                    {
-                      name: 'Jalapeño',
-                      id: 'jalapeno-id',
-                      childs: []
-                    },
-                    {
-                      name: 'Cayenne',
-                      id: 'cayenne-id',
-                      childs: []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              name: 'BBQ',
-              id: 'bbq-id',
-              childs: []
-            }
-          ]
-        }
-      ],
+      nodes: [],
       selectedNodes: {}
     };
   }
