@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import {} from 'react-icons/fa';
-
-import { FaEdit, FaCheck } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
+import { MdAdd } from 'react-icons/md';
+import { FaCheck } from 'react-icons/fa';
 
-export default ({ nodeId, onEditingNode, onChange }) => {
-  const [editing, setEditing] = useState(false);
+const Add = ({ parentId, onAddNode }) => {
+  const [adding, setAdding] = useState(false);
   const [text, setText] = useState('');
-  const changeEditingNodeHandler = () => {
-    onEditingNode(nodeId, text);
+  const changeAddNodeHandler = () => {
+    console.log('Removing', parentId);
+    onAddNode(parentId, text);
     setText('');
   };
+
   const showInput = () => {
-    if (editing) {
+    if (adding) {
       return (
         <input
           value={text}
@@ -22,7 +23,7 @@ export default ({ nodeId, onEditingNode, onChange }) => {
     }
   };
   const changeIcons = () => {
-    if (editing) {
+    if (adding) {
       return (
         <IconContext.Provider
           value={{
@@ -41,20 +42,19 @@ export default ({ nodeId, onEditingNode, onChange }) => {
           attr: { focusable: 'false' }
         }}
       >
-        <FaEdit></FaEdit>
+        <MdAdd></MdAdd>
       </IconContext.Provider>
     );
   };
   return (
-    <div className="edit">
+    <div className="add-node">
       {showInput()}
       <div
         className="icon"
         onClick={() => {
-          setEditing(!editing);
-          onChange(editing);
-          if (editing && text.length > 0) {
-            changeEditingNodeHandler();
+          setAdding(!adding);
+          if (adding && text.length > 0) {
+            changeAddNodeHandler();
           }
         }}
       >
@@ -63,3 +63,4 @@ export default ({ nodeId, onEditingNode, onChange }) => {
     </div>
   );
 };
+export default Add;

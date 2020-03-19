@@ -1,4 +1,5 @@
 $main-color: rgb(74, 98, 122);
+$icon-dimention: 20px;
 
 body {
   font-size: 18px;
@@ -41,8 +42,8 @@ body {
     align-items: center;
     transform: translate(60px);
 
-    margin: 10px;
     .label {
+      margin: 0px 10px 0px 10px;
       font-size: 24px;
       font-weight: 700;
       color: white;
@@ -50,23 +51,26 @@ body {
     .icon {
       cursor: pointer;
       vertical-align: middle;
-      width: 20px;
-      height: 20px;
+      width: $icon-dimention;
+      height: $icon-dimention;
       .box-checked {
         color: white;
+        width: $icon-dimention;
+        height: $icon-dimention;
       }
       .check {
         color: $main-color;
         position: absolute;
-
-        width: 15px;
-        height: 15px;
+        width: $icon-dimention;
+        height: $icon-dimention;
         left: 2px;
-        top: 5px;
+        top: 2px;
       }
       .box {
         color: white;
         background-color: $main-color;
+        width: $icon-dimention;
+        height: $icon-dimention;
       }
     }
     .remove {
@@ -76,20 +80,60 @@ body {
         cursor: pointer;
         vertical-align: middle;
         left: 10px;
-        width: 20px;
-        height: 20px;
+        width: $icon-dimention;
+        height: $icon-dimention;
         color: white;
       }
     }
     .edit {
+      display: flex;
+      align-items: center;
+      display: flex;
+      flex-flow: row wrap;
+      input {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 10px black;
+        color: orange;
+      }
       .icon {
         color: white;
         cursor: pointer;
         vertical-align: middle;
         left: 10px;
-        width: 20px;
-        height: 20px;
+        width: $icon-dimention;
+        height: $icon-dimention;
         color: white;
+      }
+    }
+  }
+  .add-node {
+    display: flex;
+    align-items: center;
+    transform: translate(60px);
+    display: flex;
+    flex-flow: row wrap;
+    input {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 10px black;
+      color: orange;
+    }
+    .icon {
+      display: flex;
+      flex-flow: row wrap;
+      color: white;
+      cursor: pointer;
+      vertical-align: middle;
+      width: $icon-dimention;
+      height: $icon-dimention;
+      .add-check {
+      }
+      .add {
       }
     }
   }

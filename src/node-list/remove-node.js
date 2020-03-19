@@ -1,17 +1,18 @@
 import React from 'react';
 import { FaRegTrashAlt } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
-export default ({ tree, nodeId, onRemoveNode }) => {
+export default ({ nodeId, onRemoveNode }) => {
+  const changeHandler = () => {
+    console.log('Removing', nodeId);
+    onRemoveNode(nodeId);
+  };
   return (
-    <div
-      className="remove"
-      onClick={() => onRemoveNode(tree, nodeId)}
-    >
+    <div className="remove" onClick={() => changeHandler(nodeId)}>
       <IconContext.Provider
         value={{
           className: 'icon',
 
-          attr: { focusable: 'false' },
+          attr: { focusable: 'false' }
         }}
       >
         <FaRegTrashAlt></FaRegTrashAlt>
