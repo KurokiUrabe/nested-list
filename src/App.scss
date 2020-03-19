@@ -1,0 +1,96 @@
+$main-color: rgb(74, 98, 122);
+
+body {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  background: white;
+}
+
+.container {
+  width: 98vw;
+  height: 98vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.4);
+  background: $main-color;
+  padding: 20px;
+  margin: 50px;
+  min-width: 320px;
+  min-height: 500px;
+  transition: 1s;
+  overflow: hidden;
+  width: 70%;
+  height: 70vw;
+  max-width: 80vh;
+  max-height: 80vh;
+  position: relative;
+  border-radius: 10px;
+
+  .firstUL {
+    transform: translateX(-90px);
+  }
+  h1 {
+    color: white;
+  }
+  .node {
+    display: flex;
+    align-items: center;
+    transform: translate(60px);
+
+    margin: 10px;
+    .label {
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+    }
+    .icon {
+      cursor: pointer;
+      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+      .box-checked {
+        color: white;
+      }
+      .check {
+        color: $main-color;
+        position: absolute;
+
+        width: 15px;
+        height: 15px;
+        left: 2px;
+        top: 5px;
+      }
+      .box {
+        color: white;
+        background-color: $main-color;
+      }
+    }
+    .remove {
+      margin-left: 10px;
+      .icon {
+        color: white;
+        cursor: pointer;
+        vertical-align: middle;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+        color: white;
+      }
+    }
+    .edit {
+      .icon {
+        color: white;
+        cursor: pointer;
+        vertical-align: middle;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+        color: white;
+      }
+    }
+  }
+}
